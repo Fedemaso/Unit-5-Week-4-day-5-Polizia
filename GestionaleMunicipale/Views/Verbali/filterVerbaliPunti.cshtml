@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Municipale.Models.Verbale>
+@using Municipale
+
+@{
+    ViewBag.Title = "filterVerbaliPunti";
+}
+
+<h2>Verbali con decurtamento punti maggiore di 10</h2>
+
+<div class="my-3">
+    @Html.ActionLink("Vai a Home", "Index", "Home", "", new { @class = "nav-link" })
+</div>
+<table class="table">
+    <thead class="table-primary">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Importo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CognomeAnagrafica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeAnagrafica)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DataViolazione)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DecrementoPunti)
+            </th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr class="table-primary fw-bold">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Importo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CognomeAnagrafica)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeAnagrafica)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataViolazione)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DecrementoPunti)
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+
+</table>

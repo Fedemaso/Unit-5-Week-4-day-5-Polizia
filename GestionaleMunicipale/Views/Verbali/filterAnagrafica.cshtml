@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Municipale.Models.Anagrafica>
+@using Municipale
+
+@{
+    ViewBag.Title = "filterAnagrafica";
+}
+
+<h2>Verbali filtrati per anagrafica</h2>
+
+<div class="my-3">
+    @Html.ActionLink("Vai a Home", "Index", "Home", "", new { @class = "nav-link" })
+</div>
+<table class="table">
+    <thead class="table-primary">
+
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Cognome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.totVerbali)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr class="table-primary fw-bold">
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cognome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.totVerbali)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>

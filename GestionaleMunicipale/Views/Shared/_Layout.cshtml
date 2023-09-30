@@ -1,0 +1,45 @@
+﻿
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Applicazione ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+<link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary fs-2">
+        <div class="container">
+            @Html.ActionLink("Polizia Municipale", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fs-1" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Attiva/Disattiva spostamento" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1 ">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link " })</li>
+                    <li>@Html.ActionLink("Verbali", "Index", "Verbali", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Anagrafiche", "Index", "Anagrafica", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Violazioni", "Index", "TipoViolazione", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="bg-primary fs-5 text-light rounded-2">
+            <p class=" m-5 p-3 ">&copy; @DateTime.Now.Year Federico Maso - epicode </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

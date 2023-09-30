@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Municipale.Models.TipoViolazione>
+@using Municipale
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Aggiungi violazione", "Create", "TipoViolazione", new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <thead class="table-primary">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdViolazione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descrizione)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr class="table-primary fw-bold">
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdViolazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descrizione)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
